@@ -1,11 +1,20 @@
 # Teachable frontend takehome
 
-This is scaffolding for a [Ruby Gems](https://rubygems.org/) search application. This application, once completed, should meet the following criteria:
+If you're reading this, you're likely a candidate for a frontend job at Teachable. You're going to be building a search application that takes a user's search query, hits the [Ruby Gems](https://rubygems.org/) search API endpoint, and displays the results in a list view with some added functionality (detailed below).
+
+The application, once completed, should meet the following criteria:
 
 1. It have a search box that lets users search for Ruby Gems.
-2. It should display the results of each network request in a list.
+2. It should display the results of the search in a list.
 3. Each Gem should have a button that lets users "save" and "unsave" Gems.
 4. It should have a way to view saved Gems, even after the browser window is refreshed (localStorage is a fine for this).
+
+Here's a few things we'll look for in our evaluation.
+
+1. Clean, well-organized code.
+2. Sensisble architecture choices that could scale well.
+3. A clean, functioning UI.
+4. Bonus points if you write tests.
 
 ## Getting started
 
