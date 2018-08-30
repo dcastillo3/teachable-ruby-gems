@@ -27,6 +27,8 @@ npm start
 
 We want to judge your ability to program UIs, not configure build tools. That's why we chose [Parcel](https://parceljs.org/) as a bundler, please consult the [documentation](https://parceljs.org/getting_started.html) if you run into any trouble.
 
+We added a CSS file as an example, feel free to delete that.
+
 ### Step 4: Network requests
 
 You may have noticed the proxy.js file at the root of this application, that's there to solve cross-origin issues when making network requests. The server automatically starts up when running "npm run dev" or "npm run start".
