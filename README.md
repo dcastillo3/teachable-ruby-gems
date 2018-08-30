@@ -18,7 +18,9 @@ Here's a few things we'll look for in our evaluation.
 
 ## Getting started
 
-### Step 1: Install dependencies
+### Step 1: Fork this repo and clone it
+
+### Step 2: Install dependencies
 
 We have a few dependencies necessary to run the build and proxy server, the rest are up to you.
 
@@ -26,19 +28,19 @@ We have a few dependencies necessary to run the build and proxy server, the rest
 npm install
 ```
 
-### Step 1: Start the development server
+### Step 3: Start the development server
 
 ```bash
 npm start
 ```
 
-### Step 3: Start coding
+### Step 4: Start coding
 
 We want to judge your ability to program UIs, not configure build tools. That's why we chose [Parcel](https://parceljs.org/) as a bundler, please consult the [documentation](https://parceljs.org/getting_started.html) if you run into any trouble.
 
 We added a CSS file as an example, feel free to delete that.
 
-### Step 4: Network requests
+### Step 5: Network requests
 
 You may have noticed the proxy.js file at the root of this application, that's there to solve cross-origin issues when making network requests. The server automatically starts up when running "npm run dev" or "npm run start".
 
