@@ -42,7 +42,7 @@ We added a CSS file as an example, feel free to delete that.
 
 ### Step 5: Network requests
 
-You may have noticed the proxy.js file at the root of this application, that's there to solve cross-origin issues when making network requests. The server automatically starts up when running "npm run dev" or "npm run start".
+You may have noticed the server.js file at the root of this application, that's there to solve cross-origin issues when making network requests. The server automatically starts up when running "npm run dev" or "npm run start".
 
 To see a sample request in action, run the following in your command line.
 
