@@ -7,7 +7,7 @@
     "build": "./node_modules/.bin/parcel build ./index.html",
     "dev": "concurrently './node_modules/.bin/parcel ./index.html' 'node ./server'",
     "start": "NODE_ENV=production node ./server",
-    "test": "jest"
+    "test": "echo 'Your test command goes here'"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,6 @@
   "dependencies": {
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "jest": "^23.5.0",
     "parcel": "^1.9.7"
   }
 }
