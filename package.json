@@ -4,10 +4,13 @@
   "description": "Teachable frontend takehome with Parcel.",
   "main": "server.js",
   "scripts": {
-    "build": "./node_modules/.bin/parcel build ./index.html",
-    "dev": "concurrently './node_modules/.bin/parcel ./index.html' 'node ./server'",
+    "build": "./node_modules/.bin/parcel build ./public/index.html",
+    "dev": "concurrently './node_modules/.bin/parcel ./public/index.html' 'node ./server'",
     "start": "NODE_ENV=production node ./server",
-    "test": "echo 'Your test command goes here'"
+    "test": "jest --watch",
+    "start-react-windows": "./node_modules/.bin/parcel ./public/index.html",
+    "start-server-windows": "node ./server",
+    "dev-windows": "concurrently npm:start-react-windows npm:start-server-windows"
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,22 @@
   },
   "homepage": "https://github.com/UseFedora/frontend-takehome-parcel#readme",
   "dependencies": {
-    "concurrently": "^4.0.1",
     "express": "^4.16.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "concurrently": "^4.0.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
     "parcel": "^1.9.7"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./jestConfig.js"
+    ]
   }
 }
