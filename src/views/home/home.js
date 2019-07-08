@@ -1,8 +1,12 @@
 import React from 'react';
+import { Search, List } from '../../common';
 
 const Home = props => {
     return (
-        <div>Home component</div>
+        <div class="home">
+            <Search />
+            <List />
+        </div>
     )
 }
 
