@@ -1,8 +1,13 @@
 import React from 'react';
+import { Header, Main, Footer } from './layout';
 
 const App = props => {
     return (
-        <div>Hello</div>
+        <div className="sections">
+            <Header />
+            <Main />
+            <Footer />
+        </div>
     )
 }
 
