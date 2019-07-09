@@ -32,12 +32,13 @@ class Search extends Component {
     return (
         <div className="search-gem-container">
             <Input inputValue={this.state.value} inputChange={this.handleSearchChange} />
-            <Button buttonType="submit" buttonAction={this.handleSearchClick}>Search</Button>
+            <Button buttonType="button" buttonAction={this.handleSearchClick}>Search</Button>
         </div>
     )
     }
 }
 
+//TODO: Refactor search to take in thunk callback.
 const mapDispatch = (dispatch) => {
     return {
         getRubyGems: query => dispatch(fetchRubyGems(query))
