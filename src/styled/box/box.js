@@ -2,7 +2,7 @@ import React from 'react';
 
 const Box = props => {
     return (
-        <div class="box">{props.children}</div>
+        <div className="box">{props.children}</div>
     )
 }
 

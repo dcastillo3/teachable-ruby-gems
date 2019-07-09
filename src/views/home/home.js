@@ -3,7 +3,7 @@ import { Search, List } from '../../common';
 
 const Home = props => {
     return (
-        <div class="home">
+        <div className="home">
             <Search />
             <List />
         </div>
