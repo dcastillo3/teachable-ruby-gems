@@ -1,20 +1,40 @@
 import React from 'react';
 import { Box, Grid } from '../../styled';
+import { connect } from 'react-redux';
 
 const List = props => {
+    const { rubyGems } = props;
+
     return (
         <Box>
-            <Grid>
-                <Box>TITLE</Box>
-                <Box>DESCRIPTION</Box>
-            </Grid>
+            {rubyGems && rubyGems.map(gem => {
+                const { name, version, info, downloads } = gem;
 
-            <Grid>
-                <Box>NUMBER</Box>
-                <Box>DOWNLOADS</Box>
-            </Grid>
+                return (
+                    <Box key={`${name}-${version}`}>
+                        <Grid>
+                            <Grid>
+                                <Box>{name}</Box>
+                                <Box>{version}</Box>
+                            </Grid>
+                            <Box>{info}</Box>
+                        </Grid>
+
+                        <Grid>
+                            <Box>{downloads}</Box>
+                            <Box>DOWNLOADS</Box>
+                        </Grid>
+                    </Box>
+                )
+            })}
         </Box>
     )
 }
 
-export default List;
+const mapState = (state, ownProps) => {
+    return {
+        ...state
+    }
+}
+
+export default connect(mapState)(List);

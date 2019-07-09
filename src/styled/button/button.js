@@ -1,8 +1,10 @@
 import React from 'react';
 
 const Button = props => {
+    const { buttonType, buttonAction } = props;
+
     return (
-        <button>Button</button>
+        <button type={buttonType} onClick={buttonAction}>{props.children}</button>
     )
 }
 
