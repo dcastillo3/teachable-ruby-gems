@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Box, Grid, Button } from '../../styled';
+import { Box, Grid, Button, Title, Text, TitleMuted, TitleThin } from '../../styled';
 import { putItem, deleteItem } from '../../store';
 
 const ListItem = props => {
@@ -26,15 +26,15 @@ const ListItem = props => {
             <Box>
                 <Grid>
                     <Grid>
-                        <Box>{name}</Box>
-                        <Box>{version}</Box>
+                        <Title>{name}</Title>
+                        <TitleMuted>{version}</TitleMuted>
                     </Grid>
-                    <Box>{info}</Box>
+                    <Text>{info}</Text>
                 </Grid>
 
                 <Grid>
-                    <Box>{downloads}</Box>
-                    <Box>DOWNLOADS</Box>
+                    <Title>{downloads}</Title>
+                    <TitleThin>DOWNLOADS</TitleThin>
                 </Grid>
             </Box>
 

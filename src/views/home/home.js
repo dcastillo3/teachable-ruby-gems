@@ -12,6 +12,7 @@ class Home extends Component {
     }
 
     render() {
+        //TODO: Create local property 'queryStatus' to conditionally render List
         const { getRubyGems, rubyGems } = this.props;
 
         return (

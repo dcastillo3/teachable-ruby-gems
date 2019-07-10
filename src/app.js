@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header, Main, Footer, SideBar } from './layout';
+import './app.css';
 
 const App = props => {
     return (
