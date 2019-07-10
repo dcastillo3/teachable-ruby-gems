@@ -4,6 +4,7 @@ import { Box, Grid, Button } from '../../styled';
 import { putItem, deleteItem } from '../../store';
 
 const ListItem = props => {
+    const { myItems } = props;
     const { item } = props;
     //Ruby gem properties
     const { name, version, info, downloads, sha } = item;
@@ -37,11 +38,20 @@ const ListItem = props => {
                 </Grid>
             </Box>
 
-            {/* TODO: Make save and remove appear when necessary */}
-            <Button buttonType="button" buttonAction={() => handleAdd(item)}>Save</Button>
-            <Button buttonType="button" buttonAction={() => handleRemove(sha)}>Remove</Button>
+            {myItems.some(myItem => myItem.sha === item.sha)
+                ? <Button buttonType="button" buttonAction={() => handleRemove(sha)}>Remove</Button>
+                : <Button buttonType="button" buttonAction={() => handleAdd(item)}>Save</Button>
+            }
         </Box>
     )
+}
+
+const mapState = (state, ownProps) => {
+    const { myItems } = state;
+
+    return {
+        myItems
+    }
 }
 
 const mapDispatch = (dispatch) => {
@@ -51,4 +61,4 @@ const mapDispatch = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatch)(ListItem);
+export default connect(mapState, mapDispatch)(ListItem);

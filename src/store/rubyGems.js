@@ -17,8 +17,11 @@ const getRubyGems = gems => ({
 export const fetchRubyGems = query =>
     dispatch =>
         axios.get(`http://localhost:3000/api/v1/search.json?query=${query}`)
-            .then(res =>
-                dispatch(getRubyGems(res.data)))
+            .then(res => {
+                const gems = res.data.length ? res.data : ['No items']
+
+                dispatch(getRubyGems(gems));
+            })
             .catch(err => console.log(err))
 
 //Reducer
