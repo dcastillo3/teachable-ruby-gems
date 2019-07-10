@@ -7,7 +7,7 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: ''
+            query: ''
         };
 
         this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -17,32 +17,24 @@ class Search extends Component {
     handleSearchChange(event) {
         const { value } = event.target;
 
-        this.setState({ value });
+        this.setState({ query: value });
     }
 
     handleSearchClick() {
-        const { value } = this.state;
-        const { getRubyGems } = this.props;
+        const { query } = this.state;
+        const { thunk } = this.props;
 
-        getRubyGems(value);
+        thunk(query);
     }
 
     render() {
-
-    return (
-        <div className="search-gem-container">
-            <Input inputValue={this.state.value} inputChange={this.handleSearchChange} />
-            <Button buttonType="button" buttonAction={this.handleSearchClick}>Search</Button>
-        </div>
-    )
+        return (
+            <div className="search-gem-container">
+                <Input inputValue={this.state.query} inputChange={this.handleSearchChange} />
+                <Button buttonType="button" buttonAction={this.handleSearchClick}>Search</Button>
+            </div>
+        )
     }
 }
 
-//TODO: Refactor search to take in thunk callback.
-const mapDispatch = (dispatch) => {
-    return {
-        getRubyGems: query => dispatch(fetchRubyGems(query))
-    }
-}
-
-export default connect(null, mapDispatch)(Search);
+export default Search;

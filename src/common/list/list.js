@@ -1,32 +1,21 @@
 import React from 'react';
 import { Box } from '../../styled';
-import { connect } from 'react-redux';
 import { ListItem } from '../';
 
 const List = props => {
-    //TODO: Make rubyGems naming convention generic
-    const { rubyGems } = props;
+    const { items } = props;
 
-    //TODO: Nothing found should appear only after search
     return (
         <Box>
-            {rubyGems.length
-                ? rubyGems.map(gem => {
-                    const { name, version, info, downloads } = gem;
+            {items.map(item => {
+                const { name, version } = item;
 
-                    return (
-                        <ListItem key={`${name}-${version}`} item={gem} />
-                    )
-                })
-                : <Box>Nothing found.</Box>}
+                return (
+                    <ListItem key={`${name}-${version}`} item={item} />
+                )
+            })}
         </Box>
     )
 }
 
-const mapState = (state, ownProps) => {
-    return {
-        ...state
-    }
-}
-
-export default connect(mapState)(List);
+export default List;

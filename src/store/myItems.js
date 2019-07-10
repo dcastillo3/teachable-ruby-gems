@@ -1,7 +1,5 @@
 //Action Types
 const GET_ITEMS = 'GET_ITEMS';
-const ADD_ITEM = 'ADD_ITEM';
-const REMOVE_ITEM = 'REMOVE_ITEM';
 
 //Initial State
 const initialItems = [];
@@ -12,37 +10,23 @@ const getItems = items => ({
     items
 })
 
-const addItem = item => ({
-    type: ADD_ITEM,
-    item
-})
-
-const removeItem = id => ({
-    type: REMOVE_ITEM,
-    id
-})
-
 //Thunk Creators
-
-//TODO: Call fetchItems instead of dispatching addItem to sync with localStorage
 export const putItem = item =>
     dispatch => {
+        let storageData = JSON.parse(localStorage.getItem('teachableRubyGems'));
 
-        if(localStorage.hasOwnProperty('teachableRubyGems')) {
-            let storageData = JSON.parse(localStorage.getItem('teachableRubyGems'));
-            let { myItems } = storageData.teachableRubyGems
+        if (storageData) {
+            const { myItems } = storageData.teachableRubyGems
 
-            //TODO: Check if item doesn't already exist, add it
-            if(myItems.every(currItem => currItem.sha !== item.sha)) {
+            if (myItems.every(currItem => currItem.sha !== item.sha)) {
                 let storageObj = {
                     teachableRubyGems: {
-                        myItems: [...myItems]
+                        myItems: [...myItems, item]
                     }
                 }
 
-                dispatch(addItem(item));
-                storageObj.teachableRubyGems.myItems.push(item);
-                localStorage.setItem('teachableRubyGems', JSON.stringify(storageObj));
+                localStorage.setItem('teachableRubyGems', JSON.stringify(storageObj))
+                dispatch(fetchItems());
             }
         } else {
             let storageObj = {
@@ -50,8 +34,9 @@ export const putItem = item =>
                     myItems: [item]
                 }
             }
-            
+
             localStorage.setItem('teachableRubyGems', JSON.stringify(storageObj));
+            dispatch(fetchItems());
         }
 
     }
@@ -68,28 +53,26 @@ export const deleteItem = id =>
             }
         }
 
-        dispatch(removeItem(id))
         localStorage.setItem('teachableRubyGems', JSON.stringify(storageObj));
+        dispatch(fetchItems());
     }
 
 export const fetchItems = () =>
-    dispatch =>
-        localStorage.teachableRubyGems && localStorage.teachableRubyGems.myItems
-            ? dispatch(getItems(localStorage.teachableRubyGems.myItems))
-            : []
+    dispatch => {
+        let storageData = JSON.parse(localStorage.getItem('teachableRubyGems'));
+
+        if (storageData) {
+            const { myItems } = storageData.teachableRubyGems;
+
+            dispatch(getItems(myItems))
+        }
+    }
 
 //Reducer
 export const myItems = (state = initialItems, action) => {
     switch (action.type) {
         case GET_ITEMS:
             return action.items
-        case ADD_ITEM:
-            return [
-                ...state,
-                action.item
-            ]
-        case REMOVE_ITEM:
-            return state.filter(item => item.sha !== action.id)
         default:
             return state
     }
