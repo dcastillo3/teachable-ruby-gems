@@ -8,6 +8,7 @@ const Title = styled.h1`
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .75px;
+    margin: 0px;
 `;
 
 export const TitleMuted = styled(Title)`

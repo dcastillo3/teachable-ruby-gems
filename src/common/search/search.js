@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, ButtonSearch, Box } from '../../styled/';
+import { Input, ButtonSearch, Form } from '../../styled/';
 class Search extends Component {
     constructor(props) {
         super(props);
@@ -27,9 +27,8 @@ class Search extends Component {
 
     render() {
         return (
-            <Box class="search-container">
-                <form onSubmit={this.handleSearchSubmit}>
-                    <Box position="relative" class="search-inputs">
+            <div className="search">
+                <Form position="relative" onSubmit={this.handleSearchSubmit}>
                         <Input
                             placeholder="Search items..."
                             type="text"
@@ -41,14 +40,13 @@ class Search extends Component {
                             textSize="20px"
                             top="8px"
                             right="11px"
-                            class="submit-button"
+                            className="submit-button"
                             type="submit"
                         >
-                            <i class="fas fa-search"></i>
+                            <i className="fas fa-search"></i>
                         </ButtonSearch>
-                    </Box>
-                </form>
-            </Box >
+                </Form>
+            </div >
         )
     }
 }
