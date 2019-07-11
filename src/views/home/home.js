@@ -16,14 +16,18 @@ class Home extends Component {
         const { getRubyGems, rubyGems } = this.props;
 
         return (
-            <Box class="home">
-                <Search thunk={getRubyGems} />
+            <div className="home">
+                <Box>
+                    <Search thunk={getRubyGems} />
+                </Box>
 
                 {rubyGems[0] !== 'No items'
                     ? <List items={rubyGems} />
-                    : <Text>No results found.</Text>
+                    : <Box>
+                        <Text>No results found.</Text>
+                    </Box>
                 }
-            </Box>
+            </div>
         )
     }
 }

@@ -3,7 +3,9 @@ import { Routes } from '../../routes';
 
 const Main = (props) => {
     return (
-        <Routes />
+        <div className="main">
+            <Routes />
+        </div>
     );
 }
 

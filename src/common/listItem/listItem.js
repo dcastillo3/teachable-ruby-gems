@@ -22,7 +22,7 @@ const ListItem = props => {
     }
 
     return (
-        <Box class="list-item">
+        <div className="list-item">
             <Box>
                 <Grid>
                     <Grid>
@@ -36,13 +36,13 @@ const ListItem = props => {
                     <Title>{downloads}</Title>
                     <TitleThin>DOWNLOADS</TitleThin>
                 </Grid>
-            </Box>
 
-            {myItems.some(myItem => myItem.sha === item.sha)
-                ? <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
-                : <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
-            }
-        </Box>
+                {myItems.some(myItem => myItem.sha === item.sha)
+                    ? <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
+                    : <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
+                }
+            </Box>
+        </div>
     )
 }
 
