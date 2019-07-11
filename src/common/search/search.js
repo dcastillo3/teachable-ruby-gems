@@ -30,7 +30,7 @@ class Search extends Component {
         return (
             <div className="search-gem-container">
                 <form onSubmit={this.handleSearchSubmit}>
-                    <Input inputValue={this.state.query} inputChange={this.handleSearchChange} />
+                    <Input placeholder="Search items..." type="text" value={this.state.query} onChange={this.handleSearchChange} />
                     <Button buttonType="submit">Search</Button>
                 </form>
             </div>
