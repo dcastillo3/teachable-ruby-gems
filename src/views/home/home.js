@@ -16,7 +16,7 @@ class Home extends Component {
         const { getRubyGems, rubyGems } = this.props;
 
         return (
-            <Box className="home">
+            <Box class="home">
                 <Search thunk={getRubyGems} />
 
                 {rubyGems[0] !== 'No items'
