@@ -1,9 +1,12 @@
-import React from 'react';
+import styled from 'styled-components';
 
-const Text = props => {
-    return (
-        <div className="text">{props.children}</div>
-    )
-}
+const Text = styled.p`
+    font-family: Barlow;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #2b2b2b;
+    color: #fff;
+`;
 
 export default Text;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Search, List } from '../../common';
-import { Box } from '../../styled';
+import { Box, Text } from '../../styled';
 import { fetchRubyGems } from '../../store';
 
 class Home extends Component {
@@ -16,14 +16,14 @@ class Home extends Component {
         const { getRubyGems, rubyGems } = this.props;
 
         return (
-            <div className="home">
+            <Box className="home">
                 <Search thunk={getRubyGems} />
 
                 {rubyGems[0] !== 'No items'
                     ? <List items={rubyGems} />
-                    : <Box>No results found.</Box>
+                    : <Text>No results found.</Text>
                 }
-            </div>
+            </Box>
         )
     }
 }
