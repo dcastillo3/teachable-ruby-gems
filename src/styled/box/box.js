@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 const Box = styled.div`
-    position: ${props => props.position || 'static'};
-    background: #2b2b2b;
-    padding: 20px;
-    margin: 10px;
+    ${props => props.position ? `position: ${props.position}` : ''};
+    ${props => props.alignItems ? `align-self: ${props.alignItems}` : ''};
+    ${props => props.justifyContent? `justify-self: ${props.justifyContent}` : ''};
+    ${props => props.flex? `flex: ${props.flex}` : ''};
+    ${props => props.background ? `background: ${props.background}` : ''};
+    padding: ${props => props.padding ? props.padding : '20px'};
+    margin: ${props => props.margin ? props.margin : '10px'};
 `;
 
 export default Box;

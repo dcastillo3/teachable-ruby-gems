@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Box, Grid, Button, Title, TitleMuted, TitleThin, Text } from '../../styled';
+import { Box, Grid, GridColumn, Button, Title, TitleMuted, TitleThin, Text } from '../../styled';
 import { putItem, deleteItem } from '../../store';
 
 const ListItem = props => {
@@ -25,22 +25,28 @@ const ListItem = props => {
         <div className="list-item">
             <Box>
                 <Grid>
-                    <Grid>
-                        <Title>{name}</Title>
-                        <TitleMuted>{version}</TitleMuted>
-                    </Grid>
-                    <Text>{info}</Text>
-                </Grid>
+                    <GridColumn
+                        flex="auto"
+                    >
+                        <Grid>
+                            <Title>{name}</Title>
+                            <TitleMuted>{version}</TitleMuted>
+                        </Grid>
+                        <Text>{info}</Text>
+                        {myItems.some(myItem => myItem.sha === item.sha)
+                            ? <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
+                            : <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
+                        }
+                    </GridColumn>
 
-                <Grid>
-                    <Title>{downloads}</Title>
-                    <TitleThin>DOWNLOADS</TitleThin>
-                </Grid>
+                    <GridColumn
+                        alignItems="flex-end"
+                    >
+                        <Title>{downloads}</Title>
+                        <TitleThin>DOWNLOADS</TitleThin>
+                    </GridColumn>
 
-                {myItems.some(myItem => myItem.sha === item.sha)
-                    ? <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
-                    : <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
-                }
+                </Grid>
             </Box>
         </div>
     )
