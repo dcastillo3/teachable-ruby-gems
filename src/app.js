@@ -1,15 +1,16 @@
 import React from 'react';
 import { Header, Main, Footer, SideBar } from './layout';
+import { Box } from './styled';
 import './app.css';
 
 const App = props => {
     return (
-        <div className="sections">
+        <Box class="sections">
             <SideBar />
             <Header />
             <Main />
             <Footer />
-        </div>
+        </Box>
     )
 }
 

@@ -21,7 +21,7 @@ class SideBar extends Component {
         const { myItems } = this.props;
 
         return (
-            <Box className="side-bar">
+            <Box class="side-bar">
                 {myItems.length
                     ? <List items={myItems} />
                     : <Text>No items saved.</Text>

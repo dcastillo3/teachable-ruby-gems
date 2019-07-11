@@ -39,8 +39,8 @@ const ListItem = props => {
             </Box>
 
             {myItems.some(myItem => myItem.sha === item.sha)
-                ? <Button buttonType="button" buttonAction={() => handleRemove(sha)}>Remove</Button>
-                : <Button buttonType="button" buttonAction={() => handleAdd(item)}>Save</Button>
+                ? <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
+                : <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
             }
         </Box>
     )
