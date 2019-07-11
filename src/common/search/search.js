@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Input, Button } from '../../styled/';
-import { connect } from 'react-redux';
-import { fetchRubyGems } from '../../store';
 
 class Search extends Component {
     constructor(props) {
@@ -11,7 +9,7 @@ class Search extends Component {
         };
 
         this.handleSearchChange = this.handleSearchChange.bind(this);
-        this.handleSearchClick = this.handleSearchClick.bind(this);
+        this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
     }
 
     handleSearchChange(event) {
@@ -20,7 +18,8 @@ class Search extends Component {
         this.setState({ query: value });
     }
 
-    handleSearchClick() {
+    handleSearchSubmit(event) {
+        event.preventDefault();
         const { query } = this.state;
         const { thunk } = this.props;
 
@@ -30,8 +29,10 @@ class Search extends Component {
     render() {
         return (
             <div className="search-gem-container">
-                <Input inputValue={this.state.query} inputChange={this.handleSearchChange} />
-                <Button buttonType="button" buttonAction={this.handleSearchClick}>Search</Button>
+                <form onSubmit={this.handleSearchSubmit}>
+                    <Input inputValue={this.state.query} inputChange={this.handleSearchChange} />
+                    <Button buttonType="submit">Search</Button>
+                </form>
             </div>
         )
     }

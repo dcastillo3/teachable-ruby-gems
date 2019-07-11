@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Box, Grid, Button, Title, Text, TitleMuted, TitleThin } from '../../styled';
+import { Box, Grid, Button, Title, TitleMuted, TitleThin, Text } from '../../styled';
 import { putItem, deleteItem } from '../../store';
 
 const ListItem = props => {
