@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { List } from '../../common';
-import { Box, Text } from '../../styled';
+import { Box, Title } from '../../styled';
 import { fetchItems } from '../../store';
 
 class SideBar extends Component {
@@ -21,14 +21,14 @@ class SideBar extends Component {
         const { myItems } = this.props;
 
         return (
-            <div className="side-bar">
-                {myItems.length
+            <Box className="side-bar" padding="0" margin="0">
+                {myItems && myItems.length
                     ? <List items={myItems} />
                     : <Box>
-                        <Text>No items saved.</Text>
+                        <Title>No items saved.</Title>
                     </Box>
                 }
-            </div>
+            </Box>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Search, List } from '../../common';
-import { Box, Text } from '../../styled';
+import { Box, Title } from '../../styled';
 import { fetchRubyGems } from '../../store';
 
 class Home extends Component {
@@ -12,22 +12,24 @@ class Home extends Component {
     }
 
     render() {
-        //TODO: Create local property 'queryStatus' to conditionally render List
         const { getRubyGems, rubyGems } = this.props;
 
         return (
-            <div className="home">
-                <Box>
+            <Box className="home" padding="0" margin="0">
+                <Box
+                    maxWidth="700px"
+                    margin="0 auto"
+                >
                     <Search thunk={getRubyGems} />
                 </Box>
 
-                {rubyGems[0] !== 'No items'
+                {rubyGems && rubyGems[0] !== 'No items'
                     ? <List items={rubyGems} />
                     : <Box>
-                        <Text>No results found.</Text>
+                        <Title>No results found.</Title>
                     </Box>
                 }
-            </div>
+            </Box>
         )
     }
 }
