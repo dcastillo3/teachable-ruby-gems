@@ -4,6 +4,34 @@ html {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    background-color: #3680b5;
+    background-color: #d9d9e9;
     color: #fff;
 }
+
+html::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../public/images/purple-circle.png), url(../public/images/orange-circle.png);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* html::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../public/images/peach-circle.png), url(../public/images/blue-circle.png);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    z-index: -1;
+} */

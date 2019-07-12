@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Title = styled.h1`
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1;
-    color: #fff;
+    color: #493be4;
     font-family: Barlow Condensed;
     font-weight: 700;
     text-transform: uppercase;
@@ -14,7 +14,7 @@ const Title = styled.h1`
 export const TitleMuted = styled(Title)`
     font-size: 1.5rem;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.49);
+    color: fdab3d;
 `;
 
 export const TitleThin = styled(Title)`

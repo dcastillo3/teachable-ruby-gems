@@ -3,7 +3,8 @@ import Box from '../box/box';
 
 const Grid = styled(Box)`
     ${props => props.justifyContent? `justify-content: ${props.justifyContent}` : ''};
-    ${props => props.wrap? `flex-wrap: ${props.wrap}` : ''};
+    ${props => props.alignItems? `alignItems: ${props.alignItems}` : ''};
+    ${props => props.flexWrap? `flex-wrap: ${props.flexWrap}` : ''};
     margin: 0;
     padding: 0;
     display: flex;
