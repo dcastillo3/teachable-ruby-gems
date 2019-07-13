@@ -1,11 +1,12 @@
 import React from 'react';
+import { GridColumn } from '../../styled';
 import { Routes } from '../../routes';
 
 const Main = (props) => {
     return (
-        <div className="main">
+        <GridColumn flex="auto" className="main">
             <Routes />
-        </div>
+        </GridColumn>
     );
 }
 

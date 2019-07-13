@@ -18,11 +18,18 @@ const Box = styled.div`
     ${props => props.transition? `transition: ${props.transition}` : ''};
     ${props => props.cursor? `cursor: ${props.cursor}` : ''};
     ${props => props.boxDisplay? `display: ${props.boxDisplay}` : ''};
-    padding: ${props => props.padding ? props.padding : '20px'};
-    margin: ${props => props.margin ? props.margin : '10px'};
+    ${props => props.width? `width: ${props.width}` : ''};
+    ${props => props.height? `height: ${props.height}` : ''};
+    padding: ${props => props.padding ? props.padding : ''};
+    margin: ${props => props.margin ? props.margin : ''};
 `;
 
-export const BoxSuccess = styled(Box)`
+export const BoxGutter = styled(Box)`
+    padding: ${props => props.padding ? props.padding : '20px'};
+    margin: ${props => props.margin ? props.margin : '10px'};
+`
+export const BoxSuccess = styled(BoxGutter)`
+    width: 300px;
     background-color: #f6f4ff;
     border-radius: 15px;
     margin: 20px;
@@ -34,12 +41,10 @@ export const BoxSuccess = styled(Box)`
         background: #bbffaa;
     }
 `
-
 export const BoxDanger = styled(BoxSuccess)`
 
     &:hover {
         background: #ffd4d4;
     }
 `
-
 export default Box;

@@ -1,29 +1,39 @@
 import React from 'react';
-import { Grid, GridColumn, Button, Title, TitleMuted, TitleThin, Text } from '../../styled';
+import { Grid, GridColumn, Button, TitleCard, TitleMuted, TitleThin, Text, Box } from '../../styled';
 
 const ListItem = props => {
     const { item, haveItem, handleAdd, handleRemove } = props;
 
     //Ruby gem properties
-    const { name, version, info, downloads, sha } = item;
+    let { name, version, info, downloads, sha } = item;
+    let truncatedInfo = `${info.substring(0, 120)}...`;
 
     return (
         <Grid className="list-item">
-            <GridColumn flex="auto">
+            <GridColumn alignItems="flex-start" flex="auto">
                 <Grid>
-                    <Title>{name}</Title>
+                    <TitleCard>{name}</TitleCard>
                     <TitleMuted>{version}</TitleMuted>
                 </Grid>
-                <Text maxWidth="200px">{info}</Text>
-                {haveItem
-                    ? <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
-                    : <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
-                }
-            </GridColumn>
 
-            <GridColumn alignSelf="flex-end">
-                <Title>{downloads}</Title>
-                <TitleThin>DOWNLOADS</TitleThin>
+                <Text>{truncatedInfo}</Text>
+
+                <Grid width="100%">
+                    {haveItem
+                        ? <Box flex="auto">
+                            <Button type="button" onClick={() => handleRemove(sha)}>Remove</Button>
+                        </Box>
+                        : <Box flex="auto">
+                            <Button type="button" onClick={() => handleAdd(item)}>Save</Button>
+                        </Box>
+                    }
+
+                    <GridColumn alignItems="flex-end">
+                        <TitleCard>{downloads}</TitleCard>
+                        <TitleThin>DOWNLOADS</TitleThin>
+                    </GridColumn>
+                </Grid>
+
             </GridColumn>
         </Grid>
     )

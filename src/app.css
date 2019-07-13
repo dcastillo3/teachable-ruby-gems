@@ -1,14 +1,23 @@
 /* ---- App Default Styles ---- */
-html {
+/* html {
     font-family: Barlow;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
     background-color: #d9d9e9;
     color: #fff;
+} */
+
+html {
+    font-family: 'Varela Round';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #d9d9e9;
+    color: #fff;
 }
 
-html::before {
+/* html::before {
     content: '';
     position: fixed;
     top: 0;
@@ -20,6 +29,24 @@ html::before {
     background-repeat: no-repeat, no-repeat;
     background-size: cover;
     z-index: -1;
+} */
+
+html::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../public/images/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 141%;
+    z-index: -1;
+}
+
+body {
+    margin: 0;
 }
 
 /* html::before {
