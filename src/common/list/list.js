@@ -21,7 +21,7 @@ const List = props => {
     }
 
     return (
-        <Grid flexWrap="wrap" className="list">
+        <Grid flexWrap="wrap" justifyContent="center" className="list">
             {items && items.map(item => {
                 const { name, version } = item;
                 const haveItem = myItems.some(myItem => myItem.sha === item.sha);

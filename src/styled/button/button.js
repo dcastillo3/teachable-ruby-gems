@@ -13,7 +13,7 @@ const Button = styled.button`
         background: #ef6060;
         color: #fff;
         cursor: pointer;
-        transition: .2s ease-in-out;
+        transition: .2s cubic-bezier(0.4,0.06,0.09,1.1);
     }
 
     &:focus {
