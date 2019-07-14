@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ListItem } from '../';
+import { ListItem } from '..';
 import { BoxSuccess, BoxDanger, Grid } from '../../styled';
-import { putItem, deleteItem } from '../../store';
+import { putItem, deleteItem } from '../../../store';
 
 const List = props => {
     const { items } = props;

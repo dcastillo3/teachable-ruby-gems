@@ -1,6 +1,6 @@
 import React from 'react';
-import { GridColumn } from './styled';
-import { Header, Main, Footer } from './layout';
+import { GridColumn } from './components/styled';
+import { Header, Main, Footer } from './components/layout';
 
 import './app.css';
 

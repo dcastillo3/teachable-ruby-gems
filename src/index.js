@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import { Router } from 'react-router-dom';
-import { history } from './routes';
+import { history } from './components/routes';
 import App from './app';
 
 //Inject React app into html
