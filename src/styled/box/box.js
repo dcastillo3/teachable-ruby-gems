@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 const Box = styled.div`
     ${props => props.position ? `position: ${props.position}` : ''};
+    ${props => props.top ? `top: ${props.top}` : ''};
+    ${props => props.right ? `right: ${props.right}` : ''};
+    ${props => props.bottom ? `bottom: ${props.bottom}` : ''};
+    ${props => props.left ? `left: ${props.left}` : ''};
     ${props => props.alignSelf ? `align-self: ${props.alignSelf}` : ''};
     ${props => props.justifySelf? `justify-self: ${props.justifySelf}` : ''};
     ${props => props.flex? `flex: ${props.flex}` : ''};
@@ -27,7 +31,8 @@ const Box = styled.div`
 export const BoxGutter = styled(Box)`
     padding: ${props => props.padding ? props.padding : '20px'};
     margin: ${props => props.margin ? props.margin : '10px'};
-`
+`;
+
 export const BoxSuccess = styled(BoxGutter)`
     width: 300px;
     background-color: #f6f4ff;
@@ -40,11 +45,12 @@ export const BoxSuccess = styled(BoxGutter)`
         ${props => props.hoverTransform? `transform: ${props.hoverTransform}` : ''};
         background: #bbffaa;
     }
-`
+`;
 export const BoxDanger = styled(BoxSuccess)`
 
     &:hover {
         background: #ffd4d4;
     }
-`
+`;
+
 export default Box;

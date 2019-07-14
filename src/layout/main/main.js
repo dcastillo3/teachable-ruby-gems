@@ -4,7 +4,7 @@ import { Routes } from '../../routes';
 
 const Main = (props) => {
     return (
-        <GridColumn flex="auto" className="main">
+        <GridColumn className="main" flex="auto">
             <Routes />
         </GridColumn>
     );

@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
+    ${props => props.position ? `position: ${props.position}` : ''};
+    ${props => props.textSize ? `font-size: ${props.textSize}` : ''};
+    ${props => props.top ? `top: ${props.top}` : ''};
+    ${props => props.right ? `right: ${props.right}` : ''};
+    ${props => props.bottom ? `bottom: ${props.bottom}` : ''};
+    ${props => props.left ? `left: ${props.left}` : ''};
     background: #fff;
     font-size: 1em;
     padding: 0.25em 1em;
     border: 2px solid #ef6060;
     border-radius: 5px;
     color: #ef6060;
-    ${props => props.textSize ? `font-size: ${props.textSize}` : ''}
 
     &:hover {
         background: #ef6060;
@@ -22,11 +27,6 @@ const Button = styled.button`
 `;
 
 export const ButtonSearch = styled(Button)`
-    position: ${props => props.position || 'static'};
-    ${props => props.top ? `top: ${props.top}` : ''}
-    ${props => props.right ? `right: ${props.right}` : ''}
-    ${props => props.bottom ? `bottom: ${props.bottom}` : ''}
-    ${props => props.left ? `left: ${props.left}` : ''}
     color: #000;
     background: transparent;
     padding: 0;
@@ -34,9 +34,17 @@ export const ButtonSearch = styled(Button)`
     border-radius: none;
 
     &:hover {
-        background: #fff;
+        background: transparent;
         color: #ef6060;
     }
 `;
+
+export const ButtonMenu = styled(ButtonSearch)`
+    ${props => props.active ? `transform: rotate(90deg);` : ''}
+    font-size: 2rem;
+    align-self: flex-start;
+    color: #e8e8e8;
+    padding: 20px;
+`
 
 export default Button;
