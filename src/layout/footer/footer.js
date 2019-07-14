@@ -1,9 +1,9 @@
 import React from 'react';
+import { Box } from '../../styled';
 
 const Footer = (props) => {
     return (
-        //TODO: Refactor all divs to Box components with no padding/margin
-        <div className="footer">Footer</div>
+        <Box className="footer"></Box>
     );
 }
 

@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
-//old title color: color: #493be4;
-
 const Title = styled.h1`
-    ${props => props.fontFamily? `font-family: ${props.fontFamily}` : ''};
+    ${props => props.fontFamily ? `font-family: ${props.fontFamily}` : ''};
     font-size: 4rem;
     line-height: 1;
     color #fff;
@@ -13,11 +11,17 @@ const Title = styled.h1`
     text-transform: uppercase;
 `;
 
+export const TitleMedium = styled(Title)`
+    font-size: 2rem;
+    margin: 20px 0px 20px 40px;
+`;
+
 export const TitleCard = styled(Title)`
-    color: #493be4
+    color: #493be4;
     font-size: 1rem;
     font-weight: 600;
-`
+`;
+
 export const TitleMuted = styled(Title)`
     font-size: .7rem;
     letter-spacing: .75px;

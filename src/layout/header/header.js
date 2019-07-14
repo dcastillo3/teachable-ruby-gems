@@ -1,8 +1,12 @@
 import React from 'react';
+import { Box } from '../../styled';
+import { SideBar } from '../../views';
 
 const Header = (props) => {
     return (
-        <div className="header">Header</div>
+        <Box className="header">
+            <SideBar />
+        </Box>
     );
 }
 

@@ -38,7 +38,7 @@ class Search extends Component {
                         <ButtonSearch
                             position="absolute"
                             textSize="20px"
-                            top="8px"
+                            top="11px"
                             right="11px"
                             className="submit-button"
                             type="submit"
