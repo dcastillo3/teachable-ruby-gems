@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { List } from '../../common';
 import { GridContainer, GridMenu, Box, Title, TitleMedium, ButtonMenu } from '../../styled';
-import { fetchItems } from '../../store';
+import { fetchItems } from '../../../store';
 
 class SideBar extends Component {
     constructor(props) {

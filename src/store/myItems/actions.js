@@ -1,8 +1,4 @@
-//Action Types
-const GET_ITEMS = 'GET_ITEMS';
-
-//Initial State
-const initialItems = [];
+import { GET_ITEMS } from './types';
 
 //Action Creators
 const getItems = items => ({
@@ -67,13 +63,3 @@ export const fetchItems = () =>
             dispatch(getItems(myItems))
         }
     }
-
-//Reducer
-export const myItems = (state = initialItems, action) => {
-    switch (action.type) {
-        case GET_ITEMS:
-            return action.items
-        default:
-            return state
-    }
-}

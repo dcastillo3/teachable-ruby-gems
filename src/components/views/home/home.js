@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Search, List } from '../../common';
 import { Box, Title, TitleCard, GridColumn, TextCaption, BoxGutter } from '../../styled';
-import { fetchRubyGems } from '../../store';
+import { fetchRubyGems } from '../../../store';
 
 class Home extends Component {
     constructor(props) {
