@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-//Action Types
-const GET_RUBY_GEMS = 'GET_RUBY_GEMS';
-
-//Initial State
-const initialRubyGems = [];
+import { GET_RUBY_GEMS } from './types';
 
 //Action Creators
 const getRubyGems = gems => ({
@@ -23,13 +18,3 @@ export const fetchRubyGems = query =>
                 dispatch(getRubyGems(gems));
             })
             .catch(err => console.log(err))
-
-//Reducer
-export const rubyGems = (state = initialRubyGems, action) => {
-    switch (action.type) {
-        case GET_RUBY_GEMS:
-            return action.gems
-        default:
-            return state
-    }
-}

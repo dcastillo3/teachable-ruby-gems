@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { rubyGems } from './rubyGems';
-import { myItems } from './myItems';
+import { rubyGems } from './rubyGems/reducer';
+import { myItems } from './myItems/reducer';
 
 const reducer = combineReducers({
     rubyGems,
@@ -14,5 +14,5 @@ const middleware = applyMiddleware(
 const store = createStore(reducer, middleware)
 
 export default store;
-export * from './rubyGems';
-export * from './myItems';
+export * from './rubyGems/actions';
+export * from './myItems/actions';
