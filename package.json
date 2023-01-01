@@ -42,7 +42,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.8.0",
-    "parcel": "^1.9.7"
+    "parcel": "^2.8.2"
   },
   "proxy": "http://localhost:3000",
   "jest": {
